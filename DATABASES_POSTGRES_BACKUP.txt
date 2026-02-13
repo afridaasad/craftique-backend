@@ -1,0 +1,10 @@
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "craftique_db",
+        "USER": "postgres",
+        "PASSWORD": "Afrida#123",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}
