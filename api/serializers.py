@@ -88,9 +88,7 @@ class ProductSerializer(serializers.ModelSerializer):
             )
         return None
 
-
-#
-# ---------------------------------------------------
+#Order item Serializer
 class OrderItemSerializer(serializers.ModelSerializer):
     product = ProductSerializer(read_only=True)
 

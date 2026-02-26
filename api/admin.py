@@ -72,6 +72,13 @@ class ProductAdmin(admin.ModelAdmin):
     )
     list_filter = ("category", "created_at")
     search_fields = ("title", "description", "category", "artisan__username")
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "artisan":
+            from .models import User
+            kwargs["queryset"] = User.objects.filter(
+                is_artisan=True
+            ) | User.objects.filter(is_superuser=True)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
 from .models import Order
