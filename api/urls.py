@@ -22,7 +22,6 @@ from .views import (
     ArtisanProductDetailView,
     toggle_product_status,
     # Orders
-    BuyerPlaceOrderView,
     BuyerOrderHistoryView,
     ArtisanOrderListView,
     update_order_status,
@@ -83,12 +82,11 @@ urlpatterns = [
     path("artisan/products/<int:pk>/", ArtisanProductDetailView.as_view()),
     path("artisan/products/<int:pk>/toggle-status/", toggle_product_status),
     # 📦 ORDERS
-    path("buyer/place-order/", BuyerPlaceOrderView.as_view()),
     path("buyer/orders/", BuyerOrderHistoryView.as_view()),
     path("buyer/buy-now/", buy_now_order),
     path("artisan/orders/", ArtisanOrderListView.as_view()),
     path("artisan/orders/<int:pk>/update-status/", update_order_status),
-    path("order/<int:pk>/update-delivery/", update_delivery_status),
+    path("orders/<int:pk>/update-delivery/", update_delivery_status),
     # 🧾 ADMIN
     path("admin/users/", AdminUserListView.as_view()),
     path("admin/users/<int:pk>/", AdminUserDetailView.as_view()),

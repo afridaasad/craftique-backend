@@ -412,15 +412,7 @@ class CartItemUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
 # ✅ Restore this in views.py
 
 
-class BuyerPlaceOrderView(generics.CreateAPIView):
-    serializer_class = OrderSerializer
-    permission_classes = [IsAuthenticated, IsBuyer]
 
-    def perform_create(self, serializer):
-        serializer.save(buyer=self.request.user)
-
-    def get_serializer_context(self):
-        return {"request": self.request}
 
 
 # ✅ Restore this in views.py
