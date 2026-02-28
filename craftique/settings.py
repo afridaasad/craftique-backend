@@ -126,12 +126,6 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Multi-role marketplace backend",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
-    "TAGS": [
-        {"name": "Authentication"},
-        {"name": "Buyer"},
-        {"name": "Artisan"},
-        {"name": "Admin"},
-    ],
 }
 
 INSTALLED_APPS += ["rest_framework_simplejwt.token_blacklist"]
